@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --cell-size:100px;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+dialog{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+}
+::backdrop {
+	background: black;
+	opacity: 0.6;
+	border: 1px solid blue;
+}
+.card-container {
+    width: 100vw;
+    height: 80vh;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+    align-content:baseline;
+}
+.result-container{
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+h1{
+    height: 20vh;
+    display: flex;
+    align-items: center;
+}
+
+.cell{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(var(--cell-size)* 0.9);
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #778da9;
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 2px;
+}
+/* .cell{
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border: 1px solid black;
+} */
+
+.cell:nth-child(2),
+.cell:nth-child(3),
+.cell:first-child {
+  border-top: none;
+}
+
+.cell:nth-child(7),
+.cell:nth-child(8),
+.cell:last-child {
+  border-bottom: none;
+}
+
+.cell:nth-child(3n + 1) {
+    border-left: none;
+  }
+  
+.cell:nth-child(3n + 3) {
+    border-right: none;
+  }
+
+  .player-one::after{
+    content: "X";
+  }
+
+  .player-two::after{
+    content: "O";
+  }
+
+
+/* .hover-content {
+    display: none;
+} */
